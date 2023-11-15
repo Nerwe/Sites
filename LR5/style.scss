@@ -1,0 +1,305 @@
+:root{
+    --darkBlack: #1E1E1E;
+    --darkGrey: #313843;
+    --lightGrey: #363F4B;
+    --whiteGrey: #BCB6AC;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', cursive;
+}
+
+body
+{
+    background-color: var(--darkBlack);
+    box-sizing: border-box;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: minmax(2rem, 3rem) 3fr 1fr;
+}
+
+.navbar{
+    height: 100vh;
+    background-color: var(--darkGrey);
+
+    .navbar-menu{
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .navbar-menu > a{
+        text-decoration: none;
+        color: var(--whiteGrey);
+        font-size: 1.7rem;
+        display: block;
+    }
+
+    .navbar-menu > img{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    
+    .navbar-menu:hover > a{
+        border-right: 4px solid red;
+        color: red;
+    }
+}
+
+.dashboard{
+    height: 100vh;
+    background-color: var(--lightGrey);
+
+    .dashboard-searchbar{
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+
+        .dashboard-searchbar-menu
+        {
+            display: none;
+        }
+    }
+
+    .dashboard-searchbar > input{
+        flex: 1;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .dashboard-searchbar > input:focus{
+        outline: none;
+    }
+
+    .dashboard-searchbar > button{
+        margin-left: 10px;
+        padding: 5px 10px;
+        background-color: transparent;
+        font-size: 18px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .dashboard-category{
+        padding: 1rem;
+    }
+
+    .dashboard-category > h3{
+        color: white;
+    }
+
+    .dashboard-category > p{
+        color: var(--whiteGrey);
+    }
+
+    .dashboard-category-menu{
+        padding: 0.5rem;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: var(--darkBlack) 5px 5px 4px;
+    }
+
+    .dashboard-category-menu > a{
+        padding: 1rem;
+        text-decoration: none;
+        font-weight: 1000;
+        color: white;
+        font-size: 100%;
+        flex-grow: 1;
+    }
+
+    .dashboard-category-menu > a:hover{
+        height: 1rem;
+        color: red;
+        border-bottom: 2px solid red;
+    }
+
+    .dashboard-content{
+        height: 58vh;
+        margin: 1rem;
+        padding: 1rem;
+        overflow: scroll;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        gap: 10px;
+
+        .dashboard-content-item{
+            background-color: var(--darkGrey);
+            box-shadow: var(--darkBlack) 5px 5px 4px; 
+            border-radius: 15px;
+        }
+
+        .dashboard-content-item > img{
+            width: 100%;
+            height: 10rem;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .dashboard-content-item-info{
+            padding-left: 10px;
+        }
+
+        .dashboard-content-item-info > h4{
+            color: white;
+        }
+
+        .dashboard-content-item-info > p{
+            font-weight: 1000;
+            color: red;
+        }
+
+        .dashboard-content-item-addButton{
+            padding: 10px;
+            float: right;
+        }
+
+        .dashboard-content-item-addButton > button{
+            color: var(--whiteGrey);
+            background-color: var(--darkBlack);
+            border: none;
+            border-radius: 10px;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .dashboard-content-item-addButton > button:hover{
+            color: var(--darkBlack);
+            background-color: var(--whiteGrey);
+        }
+    }
+}
+
+.order{
+    position: relative;
+    background-color: var(--darkGrey);
+
+    .order-info{
+        padding-right: 1rem;
+        padding-left: 1rem;
+        height: 100vh;
+
+        .order-title{
+            padding-top: 1rem;
+            color: white;
+        }
+
+        .order-checkout{
+            padding-top: 1rem;
+            color: white;
+
+            .order-checkout-alert{
+                padding: 10px;
+                color: yellow;
+                background-color: rgba($color: yellow, $alpha: 0.1);
+                border-radius: 15px;
+            }
+
+            .order-checkout-alert > p{
+                font-size: 12px;
+            }
+        }
+
+        .order-checkout > p{
+            color: var(--whiteGrey);
+            font-size: 12px;
+        }
+
+        .order-checkout > button{
+            float: right;
+            border: none;
+            color: white;
+            background-color: transparent;
+            text-align: bottom;
+            cursor: pointer;
+        }
+
+        .order-checkout > button:hover{
+            color: var(--darkBlack)
+        }
+
+        .order-credits{
+            padding-top: 1rem;
+        }
+
+        .order-credits > h4{
+            color: white;
+        }
+
+        .order-credits > p{
+            font-size: 12px;
+            color: var(--whiteGrey);
+        }
+    }
+
+    .order-submitButton{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .order-submitButton > button{
+        width: 90%;
+        height: 2rem;
+        color: var(--whiteGrey);
+        background-color: var(--darkBlack);
+        border: none;
+        border-radius: 15px;
+        font-size: large;
+        cursor: pointer;
+    }
+
+    .order-submitButton > button:hover{
+        color: var(--darkBlack);
+        background-color: var(--whiteGrey);
+    }
+}
+
+
+.spin{
+    animation: spin 2s infinite linear; 
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@media screen and (max-width: 680px){
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .navbar{
+        display: none;
+    }
+    
+    .dashboard{
+        .dashboard-searchbar{
+            .dashboard-searchbar-menu{
+                display: block;
+            }
+        
+            .dashboard-searchbar-menu > a{
+                margin-right: 1rem;
+                text-decoration: none;
+                color: white;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
